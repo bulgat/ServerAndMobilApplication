@@ -197,8 +197,8 @@ C:\Users\bulga\Documents\GitHub\ServerAndMobilApplication\ServerReglamentAPI\Mob
 C:\Users\bulga\Documents\GitHub\ServerAndMobilApplication\ServerReglamentAPI\MobAPI\bin\ru\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\bulga\Documents\GitHub\ServerAndMobilApplication\ServerReglamentAPI\MobAPI\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\bulga\Documents\GitHub\ServerAndMobilApplication\ServerReglamentAPI\MobAPI\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\bulga\Documents\GitHub\ServerAndMobilApplication\ServerReglamentAPI\MobAPI\obj\Debug\MobAPI.csproj.AssemblyReference.cache
 C:\Users\bulga\Documents\GitHub\ServerAndMobilApplication\ServerReglamentAPI\MobAPI\obj\Debug\MobAPI.csproj.CoreCompileInputs.cache
 C:\Users\bulga\Documents\GitHub\ServerAndMobilApplication\ServerReglamentAPI\MobAPI\obj\Debug\MobAPI.csproj.CopyComplete
 C:\Users\bulga\Documents\GitHub\ServerAndMobilApplication\ServerReglamentAPI\MobAPI\obj\Debug\MobAPI.dll
 C:\Users\bulga\Documents\GitHub\ServerAndMobilApplication\ServerReglamentAPI\MobAPI\obj\Debug\MobAPI.pdb
-C:\Users\bulga\Documents\GitHub\ServerAndMobilApplication\ServerReglamentAPI\MobAPI\obj\Debug\MobAPI.csproj.AssemblyReference.cache

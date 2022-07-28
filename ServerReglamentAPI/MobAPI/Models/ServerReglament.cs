@@ -22,8 +22,6 @@ namespace MobAPI.Models
             string customFmt = "dd.MM.yyyy";
             string formatData = dateNow.ToString(customFmt);
 
-            System.Diagnostics.Debug.Write("  context = " + context);
-
             var ListReg = (from a in context.ReglamentTable select a).ToList();
 
 
