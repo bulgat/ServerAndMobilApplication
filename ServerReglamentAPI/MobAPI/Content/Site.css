@@ -22,3 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }
+.blockImage {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
