@@ -1,12 +1,14 @@
 using Microsoft.EntityFrameworkCore;
+using ServerAndMobil.Server.model;
 using TriangleDocker.dataBasa;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDBcontent>(opt =>
 opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
+builder.Services.AddGraphQLServer().AddQueryType<QueryGraph>();
 
 // Add services to the container.
 
@@ -17,6 +19,9 @@ builder.Services.AddOpenApi();
 
 
 var app = builder.Build();
+
+//app.MapGraphQL();
+app.MapGraphQL("/graphql");
 
 app.UseDefaultFiles();
 app.MapStaticAssets();
