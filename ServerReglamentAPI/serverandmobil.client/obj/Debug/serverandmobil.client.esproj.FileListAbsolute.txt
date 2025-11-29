@@ -1,0 +1,2 @@
+C:\Users\Finally\source\repos\ServerAndMobil\serverandmobil.client\obj\Debug\serverandmobil.client.esproj.CoreCompileInputs.cache
+C:\Users\Finally\Documents\GitHub\ServerAndMobilApplication\ServerReglamentAPI\serverandmobil.client\obj\Debug\serverandmobil.client.esproj.CoreCompileInputs.cache

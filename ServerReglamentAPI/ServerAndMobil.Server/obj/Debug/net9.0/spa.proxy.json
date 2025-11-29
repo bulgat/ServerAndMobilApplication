@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:51376",
+"RedirectUrl": "",
+"LaunchCommand": "npm run dev",
+"WorkingDirectory": "C:\\Users\\Finally\\Documents\\GitHub\\ServerAndMobilApplication\\ServerReglamentAPI\\ServerAndMobil.Server\\..\\serverandmobil.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
