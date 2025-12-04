@@ -5,6 +5,17 @@ import { gql } from "@apollo/client";
 // работает консоль!
 //https://localhost:7079/graphql/
 
+//Запрос проходит!
+/*
+{
+  book {
+        title
+    author {
+            name
+        }
+    }
+}
+*/
 
 const client = new ApolloClient({
     //link: new HttpLink({ uri: "https://localhost:7079/graphql" }),

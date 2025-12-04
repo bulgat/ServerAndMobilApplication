@@ -8,7 +8,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDBcontent>(opt =>
 opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddCors(options => {
+    options.AddPolicy("AllowAll", builder => {
+        builder.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});  
+// Другие конфигурации сервиса  
+
+
+
 builder.Services.AddGraphQLServer().AddQueryType<QueryGraph>();
+builder.Services.AddErrorFilter<GraphQLErrorFilter>();
 
 // Add services to the container.
 
