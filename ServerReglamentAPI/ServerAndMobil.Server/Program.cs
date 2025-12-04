@@ -7,14 +7,23 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDBcontent>(opt =>
 opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+/*
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowAll", builder => {
         builder.AllowAnyOrigin()
         .AllowAnyMethod()
         .AllowAnyHeader();
     });
-});  
+});
+*/
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+           policy => policy
+               .AllowAnyOrigin()
+               .AllowAnyHeader()
+               .AllowAnyMethod());
+});
 // Другие конфигурации сервиса  
 
 
@@ -32,7 +41,19 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-//app.MapGraphQL();
+app.UseCors(builder =>
+{
+    builder
+          .WithOrigins("http://localhost:51376", "https://localhost:51376")
+          .SetIsOriginAllowedToAllowWildcardSubdomains()
+          .AllowAnyHeader()
+          .AllowCredentials()
+          .WithMethods("GET", "PUT", "POST", "DELETE", "OPTIONS")
+          .SetPreflightMaxAge(TimeSpan.FromSeconds(3600));
+
+}
+);
+
 app.MapGraphQL("/graphql");
 
 app.UseDefaultFiles();
