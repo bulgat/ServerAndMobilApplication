@@ -27,7 +27,7 @@ client
       }
     `,
     })
-    .then((result) => console.log(result));
+    .then((result) => console.log('result = ',result));
 
 /*
 const httpLink = new HttpLink({

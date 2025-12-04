@@ -3,6 +3,8 @@ import './App.css';
 //import { graphql } from '../gql/gql'
 import {  gql } from "@apollo/client";
 import { useQuery } from "@apollo/client/react";
+import GraphComponent from './pages/graph-component';
+
 
 const GET_TASKS = gql(`
   query GetTasks {
@@ -55,7 +57,8 @@ function App() {
             <h1 id="tableLabel">Weather forecast</h1>
             <p>This component demonstrates fetching data from the server.</p>
             {contents}
-            <img src="money.jpg"/>
+            <img src="money.jpg" />
+            <GraphComponent/>
         </div>
     );
     
