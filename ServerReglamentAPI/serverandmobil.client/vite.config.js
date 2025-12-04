@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import child_process from 'child_process';
 import { env } from 'process';
+import react from "@vitejs/plugin-react";
 
 const baseFolder =
     env.APPDATA !== undefined && env.APPDATA !== ''
@@ -39,6 +40,15 @@ const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_H
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    build: {
+
+        /** If you set esmExternals to true, this plugins assumes that 
+          all external dependencies are ES modules */
+
+        commonjsOptions: {
+            esmExternals: true
+        },
+    },
     plugins: [plugin()],
     resolve: {
         alias: {
@@ -57,5 +67,5 @@ export default defineConfig({
             key: fs.readFileSync(keyFilePath),
             cert: fs.readFileSync(certFilePath),
         }
-    }
+    },
 })

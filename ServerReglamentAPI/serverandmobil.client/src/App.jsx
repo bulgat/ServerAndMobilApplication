@@ -1,7 +1,25 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+//import { graphql } from '../gql/gql'
+import {  gql } from "@apollo/client";
+import { useQuery } from "@apollo/client/react";
+
+const GET_TASKS = gql(`
+  query GetTasks {
+    tasks(order_by: { createdAt: desc }) {
+      id
+      name
+      done
+    }
+  }
+`)
+
+
 
 function App() {
+    //const { data, loading, error } = useQuery(GET_TASKS)
+
+
     const [forecasts, setForecasts] = useState();
 
     useEffect(() => {
