@@ -29,25 +29,9 @@ client
     })
     .then((result) => console.log('result = ',result));
 
-/*
-const httpLink = new HttpLink({
-    uri: GITHUB_BASE_URL,
-    headers: {
-        //authorization: `Bearer ${process.env.REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN
-            //}`,
-    },
-});
 
-const client = new ApolloClient({
-    //link: httpLink,
-    uri: "YOUR_GRAPHQL_API_ENDPOINT",
-    cache: new InMemoryCache(),
-});
-*/
 createRoot(document.getElementById('root')).render(
     <StrictMode>
- 
         <App />
- 
   </StrictMode>,
 )

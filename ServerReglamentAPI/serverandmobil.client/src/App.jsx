@@ -19,9 +19,6 @@ const GET_TASKS = gql(`
 
 
 function App() {
-    //const { data, loading, error } = useQuery(GET_TASKS)
-
-
     const [forecasts, setForecasts] = useState();
 
     useEffect(() => {
@@ -29,7 +26,7 @@ function App() {
     }, []);
 
     const contents = forecasts === undefined
-        ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
+        ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See .</em></p>
         : <table className="table table-striped" aria-labelledby="tableLabel">
             <thead>
                 <tr>
@@ -54,7 +51,8 @@ function App() {
 
     return (
         <div>
-            <h1 id="tableLabel">Weather forecast</h1>
+            <img src="dwarft.jpg" width="100" />
+            <h1 id="tableLabel">Mobil Server</h1>
             <p>This component demonstrates fetching data from the server.</p>
             {contents}
             <img src="money.jpg" />
