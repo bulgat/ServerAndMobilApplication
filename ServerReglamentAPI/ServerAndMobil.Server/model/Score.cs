@@ -14,10 +14,6 @@ namespace AngularStrike.Server.model
         public string? Name { set; get; }
         [Required]
         public string? Family { set; get; }
-        //s[InverseProperty("CornerArticle")]
-        //[DefaultValue("Opisanie")]
-        //public string? Description { set; get; }
-        //[DefaultValue(true)]
-        //public bool Record { set; get; }
+
     }
 }

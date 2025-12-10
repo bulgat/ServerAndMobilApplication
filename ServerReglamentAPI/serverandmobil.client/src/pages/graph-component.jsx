@@ -7,17 +7,8 @@ import { PrintDirective } from "../component/print-directive";
 // работает консоль!
 //https://localhost:7079/graphql/
 
-//Запрос проходит!
-/*
-{
-  book {
-        title
-    author {
-            name
-        }
-    }
-}
-*/
+
+
 let result = "";
 
 const client = new ApolloClient({
@@ -25,6 +16,7 @@ const client = new ApolloClient({
     //link: new HttpLink({ uri: "/graphql" }),
     cache: new InMemoryCache(),
 });
+//Запрос проходит!
 const query_0 = gql`
             {
               book {
@@ -42,6 +34,33 @@ const query_1 = gql`
                 }
             }
     `;
+const query_2 = gql`
+            {
+              score {
+                    id,
+                    name,
+                    family
+                }
+            }
+    `;
+const query_3 = gql`
+            {
+              score {
+                    id,
+                    name,
+                    family
+                }
+            }
+    `;
+const query_4 = gql`
+            {
+              player {
+                    id,
+                    name,
+                    family
+                }
+            }
+    `;
 
 function GraphComponent() {
 
@@ -49,15 +68,13 @@ function GraphComponent() {
         //вход
         let cancel = false;
         client.query({
-            query: query_1,
+            query: query_4,
         })
             .then((res) => {
                 console.log('1000 SSS ss = ', res);
                 console.log('1002 SSSS ss = ', res.data.book);
-                console.log('1003 SSSS ss = ', res.data.book.author);
-                console.log('1005 SS ss = ', res.data.book.title);
 
-                result = "title = " + res.data.book?.title + " author = " + res.data.book.author?.name;
+                result = "title = " + res.data.book?.title + " author = " + res.data.book?.author?.name;
                 /*
                 return (
                     <div>
