@@ -25,14 +25,7 @@ const client = new ApolloClient({
     //link: new HttpLink({ uri: "/graphql" }),
     cache: new InMemoryCache(),
 });
-
-function GraphComponent() {
-
-    useEffect(() => {
-        //вход
-        let cancel = false;
-        client.query({
-            query: gql`
+const query_0 = gql`
             {
               book {
                     title
@@ -41,16 +34,30 @@ function GraphComponent() {
                     }
                 }
             }
-    `,
+    `;
+const query_1 = gql`
+            {
+              book {
+                    title
+                }
+            }
+    `;
+
+function GraphComponent() {
+
+    useEffect(() => {
+        //вход
+        let cancel = false;
+        client.query({
+            query: query_1,
         })
             .then((res) => {
                 console.log('1000 SSS ss = ', res);
                 console.log('1002 SSSS ss = ', res.data.book);
                 console.log('1003 SSSS ss = ', res.data.book.author);
-                console.log('1004 SSSS ss = ', res.data.book.author.name);
                 console.log('1005 SS ss = ', res.data.book.title);
 
-                result = "title = " + res.data.book.title + " author = " + res.data.book.author.name;
+                result = "title = " + res.data.book?.title + " author = " + res.data.book.author?.name;
                 /*
                 return (
                     <div>
