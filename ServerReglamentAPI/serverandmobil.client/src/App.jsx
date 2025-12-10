@@ -23,6 +23,7 @@ function App() {
 
     useEffect(() => {
         populateWeatherData();
+        getVersion();
     }, []);
 
     const contents = forecasts === undefined
@@ -65,6 +66,15 @@ function App() {
         if (response.ok) {
             const data = await response.json();
             setForecasts(data);
+        }
+    }
+
+    async function getVersion() {
+        const response = await fetch('book/getversion');
+        if (response.ok) {
+            console.log("0000 Version", response);
+            const data = response.json();
+            console.log("Version", data);
         }
     }
 }
