@@ -36,7 +36,7 @@ namespace ServerAndMobil.Server.model
         public Score GetScore(string Name) =>
 new Score { Id = 1, Name = "Война и мир", Family = "Л. Толстой" };
 
-        public List<Player> GetPlayer() => _context.Player.ToList();
+        public List<Player> GetPlayer(int id) => _context.Player.Where(a=>a.Id == id).ToList();
 
     }
 }

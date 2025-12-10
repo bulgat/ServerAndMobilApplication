@@ -61,6 +61,15 @@ const query_4 = gql`
                 }
             }
     `;
+const query_5 = gql`
+            {
+              player(id:3) {
+                    id,
+                    name,
+                    family
+                }
+            }
+    `;
 
 function GraphComponent() {
 
@@ -68,7 +77,7 @@ function GraphComponent() {
         //вход
         let cancel = false;
         client.query({
-            query: query_4,
+            query: query_5,
         })
             .then((res) => {
                 console.log('1000 SSS ss = ', res);
