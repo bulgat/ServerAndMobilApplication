@@ -9,7 +9,7 @@ namespace ServerAndMobil.Server.Controllers
         [HttpGet(Name = "GetVersion")]
         public string GetVersion()
         {
-            return "1.0.0";
+            return "890ljklj";
         }
     }
 }

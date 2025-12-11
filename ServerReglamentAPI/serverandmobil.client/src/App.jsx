@@ -4,7 +4,8 @@ import './App.css';
 import {  gql } from "@apollo/client";
 import { useQuery } from "@apollo/client/react";
 import GraphComponent from './pages/graph-component';
-
+import BookComponent from './pages/book-component';
+//import { Routes, Route } from 'react-router-dom';
 
 const GET_TASKS = gql(`
   query GetTasks {
@@ -23,7 +24,7 @@ function App() {
 
     useEffect(() => {
         populateWeatherData();
-        getVersion();
+
     }, []);
 
     const contents = forecasts === undefined
@@ -57,10 +58,18 @@ function App() {
             <p>This component demonstrates fetching data from the server.</p>
             {contents}
             <img src="money.jpg" />
-            <GraphComponent/>
+            <GraphComponent />
+            <BookComponent />
+
         </div>
     );
-    
+    /*
+            <Routes>
+                <Route path='/' element={<GraphComponent />} />
+                <Route path='/book' element={<BookComponent />} />
+            </Routes>
+    */
+
     async function populateWeatherData() {
         const response = await fetch('weatherforecast');
         if (response.ok) {
@@ -69,14 +78,7 @@ function App() {
         }
     }
 
-    async function getVersion() {
-        const response = await fetch('book/getversion');
-        if (response.ok) {
-            console.log("0000 Version", response);
-            const data = response.json();
-            console.log("Version", data);
-        }
-    }
+
 }
 
 export default App;
