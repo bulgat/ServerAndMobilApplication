@@ -84,17 +84,6 @@ function GraphComponent() {
                 console.log('1002 SSSS ss = ', res.data.book);
 
                 result = "title = " + res.data.book?.title + " author = " + res.data.book?.author?.name;
-                /*
-                return (
-                    <div>
-                        <h3>Graph MODULE 0012</h3>
-                        <div>
-                            {res}
-                        </div>
-                        <PrintDirective name={res.data.book.author.name} />
-                    </div>
-                );
-                */
             });
 
         return () => {

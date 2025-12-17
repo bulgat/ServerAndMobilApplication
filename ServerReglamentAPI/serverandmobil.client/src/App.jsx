@@ -5,6 +5,7 @@ import {  gql } from "@apollo/client";
 import { useQuery } from "@apollo/client/react";
 import GraphComponent from './pages/graph-component';
 import BookComponent from './pages/book-component';
+import LazyComponent from './pages/lazy-component'
 //import { Routes, Route } from 'react-router-dom';
 
 const GET_TASKS = gql(`
@@ -60,15 +61,10 @@ function App() {
             <img src="money.jpg" />
             <GraphComponent />
             <BookComponent />
-
+            <LazyComponent />
         </div>
     );
-    /*
-            <Routes>
-                <Route path='/' element={<GraphComponent />} />
-                <Route path='/book' element={<BookComponent />} />
-            </Routes>
-    */
+
 
     async function populateWeatherData() {
         const response = await fetch('weatherforecast');

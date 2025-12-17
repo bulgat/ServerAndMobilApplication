@@ -6,10 +6,15 @@ namespace ServerAndMobil.Server.Controllers
     [Route("[controller]")]
     public class BookController : ControllerBase
     {
-        [HttpGet(Name = "GetVersion")]
+        [HttpGet("GetVersion")]
         public string GetVersion()
         {
             return "890ljklj";
+        }
+        [HttpGet("GetStatus")]
+        public string GetStatus()
+        {
+            return "34534564634ljklj";
         }
     }
 }
