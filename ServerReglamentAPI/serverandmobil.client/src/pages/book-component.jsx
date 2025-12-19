@@ -6,13 +6,10 @@ function BookComponent() {
     getVersion();
 
     async function getVersion() {
-        await fetch('book/getversion').then(response=>{
-        console.log("0043 Version", response);
-        if (response.ok==false) {
-
-            console.log("0002 Version" );
-            
-
+        await fetch('book/getversion').then(response => {
+            console.log("0043 Version", response);
+            if (response.ok == false) {
+                console.error("0002 Version");
             }
             return response.text();
 

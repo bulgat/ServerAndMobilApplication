@@ -14,7 +14,7 @@ namespace ServerAndMobil.Server.Controllers
         [HttpGet("GetStatus")]
         public string GetStatus()
         {
-            return "34534564634ljklj";
+            return "Status 4564634ljklj";
         }
     }
 }

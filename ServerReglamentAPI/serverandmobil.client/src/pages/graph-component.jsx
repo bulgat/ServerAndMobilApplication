@@ -80,7 +80,7 @@ function GraphComponent() {
             query: query_5,
         })
             .then((res) => {
-                console.log('1000 SSS ss = ', res);
+
                 console.log('1002 SSSS ss = ', res.data.book);
 
                 result = "title = " + res.data.book?.title + " author = " + res.data.book?.author?.name;
@@ -88,7 +88,7 @@ function GraphComponent() {
 
         return () => {
             //выход
-            console.log('0999 выход  = ');
+
             cancel = true;
         }
     }, []);
