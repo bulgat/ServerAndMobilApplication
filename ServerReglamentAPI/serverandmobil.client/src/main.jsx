@@ -6,6 +6,7 @@ import { InMemoryCache } from "@apollo/client";
 //import { HttpLink } from 'apollo-link-http';
 import { ApolloClient, HttpLink } from '@apollo/client/core'
 import { gql } from "@apollo/client";
+import { BrowserRouter } from 'react-router-dom';
 
 const GITHUB_BASE_URL = 'https://api.github.com/graphql';
 
@@ -32,6 +33,8 @@ client
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
   </StrictMode>,
 )

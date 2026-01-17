@@ -5,30 +5,30 @@ namespace ServerAndMobil.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<WeatherController> _logger;
         private readonly AppDBcontent _context;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, AppDBcontent context)
+        public WeatherController(ILogger<WeatherController> logger, AppDBcontent context)
         {
             _logger = logger;
             _context = context;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet(Name = "GetWeather")]
+        public IEnumerable<Weather> Get()
         {
             var scoreList = _context.Score.ToList();
 
             var kol = 99;
 
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Enumerable.Range(1, 5).Select(index => new Weather
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),

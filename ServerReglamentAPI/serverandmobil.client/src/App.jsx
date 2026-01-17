@@ -3,10 +3,12 @@ import './App.css';
 //import { graphql } from '../gql/gql'
 import {  gql } from "@apollo/client";
 import { useQuery } from "@apollo/client/react";
+import { Outlet } from 'react-router';
 import GraphComponent from './pages/graph-component';
 import BookComponent from './pages/book-component';
 import LazyComponent from './pages/lazy-component'
-//import { Routes, Route } from 'react-router-dom';
+import { NavBarComponent } from '../src/component/nav-bar.component'
+import { NavMenuComponent } from '../src/component/nav-menu.component'
 
 const GET_TASKS = gql(`
   query GetTasks {
@@ -54,6 +56,10 @@ function App() {
 
     return (
         <div>
+            <NavMenuComponent/>
+            <NavBarComponent />
+            
+            <Outlet/>
             <img src="dwarft.jpg" width="100" />
             <h1 id="tableLabel">Mobil Server</h1>
             <p>This component demonstrates fetching data from the server.</p>
@@ -67,7 +73,7 @@ function App() {
 
 
     async function populateWeatherData() {
-        const response = await fetch('weatherforecast');
+        const response = await fetch('weather');
         if (response.ok) {
             const data = await response.json();
             setForecasts(data);
